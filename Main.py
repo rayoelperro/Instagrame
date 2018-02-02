@@ -1,16 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from IDE import InstagrameIDE as ide
+from ide import InstagrameIDE as ide
 import sys
 import os.path
 
 def ByFile(usernames,passwords):
     if os.path.exists(usernames) and os.path.exists(passwords):
         u = open(usernames, 'r').readlines()
-        p = open(usernames, 'r').readlines()
+        p = open(passwords, 'r').readlines()
         res = []
         for ui in u:
+            if ui[len(ui)-1] == "\n":
+                ui = ui[:-1]
             for pi in p:
+                if pi[len(pi) - 1] == "\n":
+                    pi = pi[:-1]
                 res.append([ui,pi])
         return res
     print "Ambos archivos no exísten"

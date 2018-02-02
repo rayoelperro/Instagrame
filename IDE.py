@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
-from Behaviour import KeyBoard
+from behaviour import KeyBoard
 
 AttackInfo = lambda u,p,l,c:{"Username":u,"Password":p,"Log":l,"Content":c}
 NFEnter = "No se encontro el boton de enter"
